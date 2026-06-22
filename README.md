@@ -191,27 +191,3 @@ Choix :
 ```
 
 Utilisez un `switch`. Le programme ne s'arrête que sur le choix `3`.
-
----
-
-## Bonus — Pour aller plus loin
-
-- **B1.** Fonction `int factorielle(int n)` (boucle puis, si vous voulez, version récursive).
-- **B2.** Demandez 5 notes, stockez-les dans un `vector`, puis triez-les avec `std::sort`.
-- **B3.** Dans l'exercice `Etudiant`, ajoutez une **méthode** `afficher()` à la structure (premier pas vers les classes).
-
----
-
-## Récapitulatif des notions
-
-| Exercices | Notions |
-|---|---|
-| 1–3 | `cout`, variables, types, `cin` |
-| 4–5 | conditions `if / else` |
-| 6–8 | boucles `for` et `while` |
-| 9–10 | fonctions, paramètres, valeur de retour |
-| 11 | `vector`, parcours, calculs |
-| 12 | `std::string` |
-| 13 | `struct` |
-| 14 | `switch` |
-| Bonus | récursivité, `sort`, méthode |
