@@ -28,8 +28,6 @@ void ex2() {
     std::cout << "Initiale : " << initiale << std::endl;
     std::cout << "Etudiant : " << etudiant << std::endl;
     std::cout << "Ville : " << ville << std::endl;
-
-
 }
 
 // -------------------------------------------------------------
@@ -59,7 +57,22 @@ void ex3() {
 // Exercice 4 - Conditions (if / else)
 // -------------------------------------------------------------
 void ex4() {
+    int to_test;
 
+    std::cout << "entrez un nombre entier :" << std::endl;
+    std::cin >> to_test;
+
+    if (to_test > 0) {
+        std::cout << "votre nombre est positif, ";
+    } else {
+        std::cout << "votre nombre est negatif, ";
+    }
+    std::cout << "et ";
+    if (to_test % 2 == 0) {
+        std::cout << "il est est pair." << std::endl;
+    } else {
+        std::cout << "il est est impair." << std::endl;
+    }
 }
 
 // -------------------------------------------------------------
