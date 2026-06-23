@@ -237,6 +237,17 @@ void ex11() {
 // Exercice 12 - Chaines de caracteres
 // -------------------------------------------------------------
 void ex12() {
+    std::string entry;
+
+    std::cout << "Entrez une string : " << std::endl;
+    std::cin >> entry;
+
+    std::cout << "votre entrée :" << entry << std::endl;
+    std::cout << "longueur :" << entry.length() << std::endl;
+    std::cout << "Majuscules :";
+
+
+
 
 }
 
