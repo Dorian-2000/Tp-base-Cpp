@@ -108,13 +108,35 @@ void ex5() {
 // Exercice 6 - Boucle for (table de multiplication)
 // -------------------------------------------------------------
 void ex6() {
+    int entry;
+    int i;
 
+    std::cout << "Entrez un nombre : " << std::endl;
+    std::cin >> entry;
+
+    for (i = 1; i <= 10; ++i) {
+        std::cout << entry <<  " x " << i << " = "<< entry * i << std::endl;
+    }
 }
 
 // -------------------------------------------------------------
 // Exercice 7 - Boucle while (somme de 1 a N)
 // -------------------------------------------------------------
 void ex7() {
+
+    int entry;
+    int counter = 1;
+    int result;
+
+    std::cout << "Entrez un nombre : " << std::endl;
+    std::cin >> entry;
+    std::cout << "n : " << entry << std::endl;
+
+    while (counter <= entry) {
+        result = result + counter;
+        counter++;
+    }
+    std::cout << "somme : " << result << std::endl;
 
 }
 
