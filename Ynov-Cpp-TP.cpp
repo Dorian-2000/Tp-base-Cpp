@@ -79,7 +79,29 @@ void ex4() {
 // Exercice 5 - Le plus grand des trois (sans fonction toute faite)
 // -------------------------------------------------------------
 void ex5() {
+    int first;
+    int second;
+    int third;
+    int biggest;
 
+    std::cout << "Entrez un premier nombre : " << std::endl;
+    std::cin >> first;
+
+    std::cout << "Entrez un second nombre : " << std::endl;
+    std::cin >> second;
+
+    std::cout << "Entrez un troisieme nombre : " << std::endl;
+    std::cin >> third;
+
+    if (first > second && first > third) {
+        biggest = first;
+    } else if (second > third) {
+        biggest = second;
+    } else {
+        biggest = third;
+    }
+
+    std::cout << "L'entree la plus grande est : " << biggest << std::endl;
 }
 
 // -------------------------------------------------------------
