@@ -198,7 +198,6 @@ void ex10() {
         else {
             std::cout << i << " n'est pas pair." << std::endl;
         }
-
     }
 }
 
@@ -206,7 +205,32 @@ void ex10() {
 // Exercice 11 - Tableau / vector
 // -------------------------------------------------------------
 void ex11() {
+    std::vector<int> list = {12, 7, 25, 3, 18};
+    int sum = 0;
+    int moy;
+    int max = 0;
 
+    std::cout << "elements : ";
+    for (int i = 0; i < list.size(); ++i) {
+        std::cout << list[i] << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "somme : ";
+    for (int i = 0; i < list.size(); ++i) {
+        sum = sum + list[i];
+    }
+    std::cout << sum << std::endl;
+
+    moy = sum / list.size();
+    std::cout << "moyenne : " << moy << std::endl;
+
+    for (int i = 0; i < list.size(); ++i) {
+        if (list[i] > max) {
+            max = list[i];
+        }
+    }
+    std::cout << "max : " << max << std::endl;
 }
 
 // -------------------------------------------------------------
