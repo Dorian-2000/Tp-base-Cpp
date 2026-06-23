@@ -36,6 +36,22 @@ void ex2() {
 // Exercice 3 - Lecture clavier (cin)
 // -------------------------------------------------------------
 void ex3() {
+    int first;
+    int second;
+
+    std::cout << "Entrez un premier nombre : " << std::endl;
+    std::cin >> first;
+
+    std::cout << "Entrez un second nombre : " << std::endl;
+    std::cin >> second;
+
+    int add = first + second;
+    int dif = first - second;
+    int mult = first * second;
+
+    std::cout << "Somme : " << add << std::endl;
+    std::cout << "Difference : " << dif << std::endl;
+    std::cout << "Produit : " << mult << std::endl;
 
 }
 
