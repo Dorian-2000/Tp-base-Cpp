@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <cctype>
+#include <ctime>
 
 // -------------------------------------------------------------
 // Exercice 1 - Premier programme (cout)
@@ -316,8 +317,36 @@ void ex13() {
 // -------------------------------------------------------------
 // Exercice 14 - Menu avec switch
 // -------------------------------------------------------------
-void ex14() {
 
+void sayHello() {
+    std::cout << "coucou :)" << std::endl;
+}
+void whatTimeIsIt() {
+    time_t timestamp;
+    time(&timestamp);
+    std::cout << ctime(&timestamp);
+}
+
+void ex14() {
+    int choice = -1;
+    while (choice != 0) {
+        std::cout << "----- Que voulez vous faire ? -----" << std::endl;
+        std::cout << "1 - Dire bonjour " << std::endl;
+        std::cout << "2 - Donner la date " << std::endl;
+        std::cout << "3 - Quitter " << std::endl;
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                sayHello();
+                break;
+            case 2:
+                whatTimeIsIt();
+                break;
+            case 3:
+                return;
+        }
+    }
 }
 
 // =============================================================
