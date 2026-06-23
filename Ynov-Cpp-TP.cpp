@@ -143,11 +143,11 @@ void ex7() {
 // -------------------------------------------------------------
 // Exercice 8 - Boucle avec validation (mot de passe)
 // -------------------------------------------------------------
-void ex8() {
-    int passowrd;
+void ex8() { //NLEM -> a changer en sting
+    std::string passowrd;
     int tries;
     bool passwordFound = false;
-    int actual;
+    std::string actual;
 
     std::cout << "Entrez un mot de passe : " << std::endl;
     std::cin >> passowrd;
@@ -269,8 +269,47 @@ void ex12() {
 // Exercice 13 - struct
 // -------------------------------------------------------------
 
+struct Etudiant {
+    std::string nom;
+    int age;
+    double moyenne;
+};
+
+void afficherEtudiant(Etudiant etudiant) {
+    std::cout << "nom : " << etudiant.nom << std::endl;
+    std::cout << "age : " << etudiant.age << std::endl;
+    std::cout << "moyenne : " << etudiant.moyenne << std::endl;
+    std::cout << std::endl;
+}
 
 void ex13() {
+    Etudiant John;
+    John.nom = "John";
+    John.age = 21;
+    John.moyenne = 13.8;
+
+    Etudiant Anais;
+    Anais.nom = "Anais";
+    Anais.age = 21;
+    Anais.moyenne = 15.4;
+
+    Etudiant betterStudent;
+
+    if (John.moyenne > Anais.moyenne) {
+        betterStudent = John;
+    }
+    else {
+        betterStudent = Anais;
+    }
+
+    std::cout << "Premier etudiant : " << std::endl;
+    afficherEtudiant(John);
+
+    std::cout << "Second etudiant : " << std::endl;
+    afficherEtudiant(Anais);
+
+    std::cout << "l'etudiant avec la meilleur moyenne est  : " << std::endl;
+    afficherEtudiant(betterStudent);
 
 }
 
