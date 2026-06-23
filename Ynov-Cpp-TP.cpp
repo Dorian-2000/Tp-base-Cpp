@@ -238,15 +238,29 @@ void ex11() {
 // -------------------------------------------------------------
 void ex12() {
     std::string entry;
+    std::string voyelles = "aeiou";
+    int voyelleCount = 0;
 
     std::cout << "Entrez une string : " << std::endl;
     std::cin >> entry;
 
-    std::cout << "votre entrée :" << entry << std::endl;
+    std::string upperEntry = entry;
+
+
+    std::cout << "votre entree :" << entry << std::endl;
     std::cout << "longueur :" << entry.length() << std::endl;
     std::cout << "Majuscules :";
-
-
+    for (int i = 0; i < entry.length(); ++i) {
+        upperEntry[i] = std::toupper(entry[i]);
+    }
+    std::cout << upperEntry << std::endl;
+    std::cout << "Voyelles : ";
+    for (int i = 0; i < entry.length(); ++i) {
+        if (voyelles.find(std::tolower(entry[i])) != std::string::npos) {
+            voyelleCount++;
+        }
+    }
+    std::cout << voyelleCount << std::endl;
 
 
 }
