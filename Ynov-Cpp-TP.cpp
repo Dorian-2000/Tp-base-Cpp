@@ -44,13 +44,9 @@ void ex3() {
     std::cout << "Entrez un second nombre : " << std::endl;
     std::cin >> second;
 
-    int add = first + second;
-    int dif = first - second;
-    int mult = first * second;
-
-    std::cout << "Somme : " << add << std::endl;
-    std::cout << "Difference : " << dif << std::endl;
-    std::cout << "Produit : " << mult << std::endl;
+    std::cout << "Somme : " << first + second << std::endl;
+    std::cout << "Difference : " << first - second << std::endl;
+    std::cout << "Produit : " << first * second << std::endl;
 
 }
 
@@ -144,20 +140,20 @@ void ex7() {
 // -------------------------------------------------------------
 // Exercice 8 - Boucle avec validation (mot de passe)
 // -------------------------------------------------------------
-void ex8() { //NLEM -> a changer en sting
-    std::string passowrd;
-    int tries;
+void ex8() {
+    std::string password;
+    int tries = 0;
     bool passwordFound = false;
     std::string actual;
 
     std::cout << "Entrez un mot de passe : " << std::endl;
-    std::cin >> passowrd;
+    std::cin >> password;
 
     while (!passwordFound) {
         std::cout << "Entrez votre mot de passe : " << std::endl;
         std::cin >> actual;
 
-        if (actual == passowrd) {
+        if (actual == password) {
             std::cout << "Mot de passe valide. (" << tries << " essais)"  << std::endl;
             passwordFound = true;
 
