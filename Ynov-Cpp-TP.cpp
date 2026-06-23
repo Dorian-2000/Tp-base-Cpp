@@ -8,7 +8,9 @@
 // Exercice 1 - Premier programme (cout)
 // -------------------------------------------------------------
 void ex1() {
-
+    std::cout << "Bonjour !" << std::endl;
+    std::cout << "Je m'appelle Nathan." << std::endl;
+    std::cout << "J'apprends le c++." << std::endl;
 }
 
 // -------------------------------------------------------------
