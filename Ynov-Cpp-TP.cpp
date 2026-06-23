@@ -172,17 +172,34 @@ void ex8() {
 // Exercice 9 - Premiere fonction
 // -------------------------------------------------------------
 
-void ex9() {
+int carre(int n) {
+    return n * n;
+}
 
+void ex9() {
+    for (int i = 1; i <= 5; ++i) {
+        std::cout << carre(i) << std::endl;
+    }
 }
 
 // -------------------------------------------------------------
 // Exercice 10 - Fonction qui renvoie un bool
 // -------------------------------------------------------------
 
-
+bool isEven(int n) {
+    return n % 2 == 0;
+}
 void ex10() {
 
+    for (int i = 0; i <= 20; ++i) {
+        if (isEven(i)) {
+            std::cout << i << " est pair." << std::endl;
+        }
+        else {
+            std::cout << i << " n'est pas pair." << std::endl;
+        }
+
+    }
 }
 
 // -------------------------------------------------------------
