@@ -169,7 +169,7 @@ bool estPair(int x) {
 }
 
 void ex10() {
-	std::cout << "Nombres pairs de 1 à 20 : " << std::endl;
+	std::cout << "Nombres pairs de 1 a 20 : " << std::endl;
 
     for (int i = 1; i <= 20; ++i) {
 		if (estPair(i)) {
@@ -203,29 +203,88 @@ void ex11() {
 // -------------------------------------------------------------
 // Exercice 12 - Chaines de caracteres
 // -------------------------------------------------------------
+int countVowels(const std::string& str) {
+	int count = 0;
+	for (char c : str) {
+		char lowerC = std::tolower(c);
+		if (lowerC == 'a' || lowerC == 'e' || lowerC == 'i' || lowerC == 'o' || lowerC == 'u') {
+			count++;
+		}
+	}
+	return count;
+}
+
 void ex12() {
 	std::string userWord;
 	std::cout << "Mot : ";
 	std::cin >> userWord;
+	std::transform(userWord.begin(), userWord.end(), userWord.begin(), ::toupper);
 
 	std::cout << "Longueur : " << userWord.length() << std::endl;
-	std::cout << "Majuscules : " <<  << std::endl;
+	std::cout << "Majuscules : " << userWord << std::endl;
+	std::cout << "Voyelles : " << countVowels(userWord) << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 13 - struct
 // -------------------------------------------------------------
+struct EtudiantMethode {
+	std::string nom;
+	int age;
+	double moyenne;
 
+	void afficher() const {
+		std::cout << nom << " | " << age << " ans | moyenne : " << moyenne << "\n";
+	}
+};
 
 void ex13() {
+	EtudiantMethode etudiant1 = { "Dimitri", 16, 13.4 };
+	EtudiantMethode etudiant2 = { "Alice", 20, 16.8 };
 
+	etudiant1.afficher();
+	etudiant2.afficher();
+	std::cout << "" << std::endl;
+	
+	if (etudiant1.moyenne > etudiant2.moyenne) {
+		std::cout << etudiant1.nom << " a la meilleure moyenne." << std::endl;
+	}
+	else if (etudiant1.moyenne < etudiant2.moyenne) {
+		std::cout << etudiant2.nom << " a la meilleure moyenne." << std::endl;
+	}
+	else {
+		std::cout << "Les deux etudiants ont la meme moyenne." << std::endl;
+	}
 }
 
 // -------------------------------------------------------------
 // Exercice 14 - Menu avec switch
 // -------------------------------------------------------------
 void ex14() {
-
+	int choice = 0;
+	while (choice != 3) {
+		std::cout << "Menu : " << std::endl;
+		std::cout << "1. Dire bonjour" << std::endl;
+		std::cout << "2. Afficher l'heure" << std::endl;
+		std::cout << "3. Quitter" << std::endl;
+		std::cout << "Choix : ";
+		std::cin >> choice;
+		std::cout << "" << std::endl;
+		switch (choice) {
+		case 1:
+			std::cout << "Bonjour !" << std::endl;
+			break;
+		case 2:
+			std::cout << "J'ai pas de montre moi ! (On a qu'a dire qu'il est 14:23:36) " << std::endl;
+			break;
+		case 3:
+			std::cout << "Au Revoir !" << std::endl;
+			break;
+		default:
+			std::cout << "Choix invalide." << std::endl;
+		}
+		std::cout << "" << std::endl;
+	}
 }
 
 // =============================================================
@@ -249,16 +308,6 @@ void bonus1() {
 void bonus2() {
 
 }
-
-struct EtudiantMethode {
-    std::string nom;
-    int age;
-    double moyenne;
-
-    void afficher() const {
-        std::cout << nom << " | " << age << " ans | moyenne : " << moyenne << "\n";
-    }
-};
 
 void bonus3() {
     EtudiantMethode e = { "Aria", 21, 14.5 };
