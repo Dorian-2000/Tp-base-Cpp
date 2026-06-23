@@ -17,6 +17,18 @@ void ex1() {
 // Exercice 2 - Variables et types
 // -------------------------------------------------------------
 void ex2() {
+    int age = 21;
+    float taille = 1.73;
+    char initiale = 'N';
+    bool etudiant = true;
+    std::string ville = "Bordeaux";
+
+    std::cout << "Age : " << age << std::endl;
+    std::cout << "Taille : " << taille << std::endl;
+    std::cout << "Initiale : " << initiale << std::endl;
+    std::cout << "Etudiant : " << etudiant << std::endl;
+    std::cout << "Ville : " << ville << std::endl;
+
 
 }
 
