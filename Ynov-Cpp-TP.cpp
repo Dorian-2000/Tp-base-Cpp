@@ -144,7 +144,28 @@ void ex7() {
 // Exercice 8 - Boucle avec validation (mot de passe)
 // -------------------------------------------------------------
 void ex8() {
+    int passowrd;
+    int tries;
+    bool passwordFound = false;
+    int actual;
 
+    std::cout << "Entrez un mot de passe : " << std::endl;
+    std::cin >> passowrd;
+
+    while (!passwordFound) {
+        std::cout << "Entrez votre mot de passe : " << std::endl;
+        std::cin >> actual;
+
+        if (actual == passowrd) {
+            std::cout << "Mot de passe valide. (" << tries << " essais)"  << std::endl;
+            passwordFound = true;
+
+            break;
+        } else {
+            std::cout << "Mot de passe incorrect, reessayez." << std::endl;
+            tries++;
+        }
+    }
 }
 
 // -------------------------------------------------------------
