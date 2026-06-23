@@ -39,6 +39,7 @@ void ex3() {
 	std::cin >> num1;
 	std::cout << "Nombre 2 : ";
 	std::cin >> num2;
+
 	std::cout << "Somme : " << num1 + num2 << std::endl;
 	std::cout << "Difference : " << num1 - num2 << std::endl;
 	std::cout << "Produit : " << num1 * num2 << std::endl;
@@ -51,6 +52,7 @@ void ex4() {
     int number;
 	std::cout << "Entrez un nombre : ";
 	std::cin >> number;
+
 	if (number > 0) {
 		std::cout << "Le nombre est positif." << std::endl;
 	}
@@ -79,6 +81,7 @@ void ex5() {
 	std::cin >> b;
 	std::cout << "c : ";
 	std::cin >> c;
+
     if (a >= b) {
 		if (a >= c) {
 			std::cout << "Le plus grand est : " << a << std::endl;
@@ -104,6 +107,7 @@ void ex6() {
     int number;
 	std::cout << "Table de : ";
 	std::cin >> number;
+
     for (int i = 1; i <= 10; ++i) {
 		std::cout << number << " x " << i << " = " << number * i << std::endl;
     }
@@ -116,10 +120,12 @@ void ex7() {
 	int i = 0, N, somme = 0;
 	std::cout << "N : ";
 	std::cin >> N;
+
     while (i <= N) {
         somme += i;
 		++i;
     }
+
 	std::cout << "Somme = " << somme << std::endl;
 }
 
@@ -127,47 +133,83 @@ void ex7() {
 // Exercice 8 - Boucle avec validation (mot de passe)
 // -------------------------------------------------------------
 void ex8() {
-	int mdp = 1234, userInput, attemps = 0;
+	std::string mdp = "1234", userInput = "";
+	int attemps = 0;
 
     while (mdp != userInput) {
 		if (attemps != 0) {
 			std::cout << "Mot de passe incorrect. Reessayez." << std::endl;
 		}
 		std::cout << "Entrez le mot de passe : ";
-		attemps++;
 		std::cin >> userInput;
+		attemps++;
     }
+
+	std::cout << "Acces autorise (" << attemps << " essais)." << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 9 - Premiere fonction
 // -------------------------------------------------------------
+int carre(int x) {
+    return x * x;
+};
 
 void ex9() {
-
+	for (int i = 1; i <= 5; ++i) {
+		std::cout << i << " -> " << carre(i) << std::endl;
+	}
 }
 
 // -------------------------------------------------------------
 // Exercice 10 - Fonction qui renvoie un bool
 // -------------------------------------------------------------
-
+bool estPair(int x) {
+	return x % 2 == 0;
+}
 
 void ex10() {
+	std::cout << "Nombres pairs de 1 à 20 : " << std::endl;
 
+    for (int i = 1; i <= 20; ++i) {
+		if (estPair(i)) {
+			std::cout << i << std::endl;
+		}
+    }
 }
 
 // -------------------------------------------------------------
 // Exercice 11 - Tableau / vector
 // -------------------------------------------------------------
 void ex11() {
+	std::vector<int> myVector = {12, 7, 25, 3, 18};
+	std::string listElements = "";
+	int somme = 0, max = 0;
 
+	for (int i = 0; i < myVector.size(); ++i) {
+		somme += myVector[i];
+		listElements += std::to_string(myVector[i]) + " ";
+		if (myVector[i] > max) {
+			max = myVector[i];
+		}
+	}
+
+	std::cout << "Elements : " << listElements << std::endl;
+	std::cout << "Somme : " << somme << std::endl;
+	std::cout << "Moyenne : " << somme/myVector.size() << std::endl;
+	std::cout << "Max : " << max << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 12 - Chaines de caracteres
 // -------------------------------------------------------------
 void ex12() {
+	std::string userWord;
+	std::cout << "Mot : ";
+	std::cin >> userWord;
 
+	std::cout << "Longueur : " << userWord.length() << std::endl;
+	std::cout << "Majuscules : " <<  << std::endl;
 }
 
 // -------------------------------------------------------------
