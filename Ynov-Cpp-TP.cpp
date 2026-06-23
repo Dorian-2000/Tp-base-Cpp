@@ -8,103 +8,283 @@
 // Exercice 1 - Premier programme (cout)
 // -------------------------------------------------------------
 void ex1() {
-
+  std::cout << "Bonjour !" << std::endl;
+  std::cout << "Je m'appelle Lucas." << std::endl;
+  std::cout << "J'apprends le C++." << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 2 - Variables et types
 // -------------------------------------------------------------
 void ex2() {
+    int age = 23;
+    double taille = 1.93;
+    char initiale = 'L';
+    bool etudiant = true;
+    std::string ville = "Bordeaux";
 
+	std::cout << "Age : " << age << std::endl;
+	std::cout << "Taille : " << taille << std::endl;
+	std::cout << "Initiale : " << initiale << std::endl;
+	std::cout << "Etudiant : " << etudiant << std::endl;
+	std::cout << "Ville : " << ville << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 3 - Lecture clavier (cin)
 // -------------------------------------------------------------
 void ex3() {
+    int num1, num2;
+	std::cout << "Nombre 1 : ";
+	std::cin >> num1;
+	std::cout << "Nombre 2 : ";
+	std::cin >> num2;
 
+	std::cout << "Somme : " << num1 + num2 << std::endl;
+	std::cout << "Difference : " << num1 - num2 << std::endl;
+	std::cout << "Produit : " << num1 * num2 << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 4 - Conditions (if / else)
 // -------------------------------------------------------------
 void ex4() {
+    int number;
+	std::cout << "Entrez un nombre : ";
+	std::cin >> number;
 
+	if (number > 0) {
+		std::cout << "Le nombre est positif." << std::endl;
+	}
+	else if (number < 0) {
+		std::cout << "Le nombre est negatif." << std::endl;
+	}
+	else {
+		std::cout << "Le nombre nul." << std::endl;
+	}
+    if (number % 2 == 0) {
+		std::cout << "Le nombre est pair." << std::endl;
+    }
+    else {
+		std::cout << "Le nombre est impair." << std::endl;
+    }
 }
 
 // -------------------------------------------------------------
 // Exercice 5 - Le plus grand des trois (sans fonction toute faite)
 // -------------------------------------------------------------
 void ex5() {
+    int a, b, c;
+	std::cout << "a : ";
+	std::cin >> a;
+	std::cout << "b : ";
+	std::cin >> b;
+	std::cout << "c : ";
+	std::cin >> c;
 
+    if (a >= b) {
+		if (a >= c) {
+			std::cout << "Le plus grand est : " << a << std::endl;
+		}
+		else {
+			std::cout << "Le plus grand est : " << c << std::endl;
+		}
+    }
+    else {
+        if (b >= c) {
+			std::cout << "Le plus grand est : " << b << std::endl;
+        }
+		else {
+			std::cout << "Le plus grand est : " << c << std::endl;
+		}
+    }
 }
 
 // -------------------------------------------------------------
 // Exercice 6 - Boucle for (table de multiplication)
 // -------------------------------------------------------------
 void ex6() {
+    int number;
+	std::cout << "Table de : ";
+	std::cin >> number;
 
+    for (int i = 1; i <= 10; ++i) {
+		std::cout << number << " x " << i << " = " << number * i << std::endl;
+    }
 }
 
 // -------------------------------------------------------------
 // Exercice 7 - Boucle while (somme de 1 a N)
 // -------------------------------------------------------------
 void ex7() {
+	int i = 0, N, somme = 0;
+	std::cout << "N : ";
+	std::cin >> N;
 
+    while (i <= N) {
+        somme += i;
+		++i;
+    }
+
+	std::cout << "Somme = " << somme << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 8 - Boucle avec validation (mot de passe)
 // -------------------------------------------------------------
 void ex8() {
+	std::string mdp = "1234", userInput = "";
+	int attemps = 0;
 
+    while (mdp != userInput) {
+		if (attemps != 0) {
+			std::cout << "Mot de passe incorrect. Reessayez." << std::endl;
+		}
+		std::cout << "Entrez le mot de passe : ";
+		std::cin >> userInput;
+		attemps++;
+    }
+
+	std::cout << "Acces autorise (" << attemps << " essais)." << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 9 - Premiere fonction
 // -------------------------------------------------------------
+int carre(int x) {
+    return x * x;
+};
 
 void ex9() {
-
+	for (int i = 1; i <= 5; ++i) {
+		std::cout << i << " -> " << carre(i) << std::endl;
+	}
 }
 
 // -------------------------------------------------------------
 // Exercice 10 - Fonction qui renvoie un bool
 // -------------------------------------------------------------
-
+bool estPair(int x) {
+	return x % 2 == 0;
+}
 
 void ex10() {
+	std::cout << "Nombres pairs de 1 a 20 : " << std::endl;
 
+    for (int i = 1; i <= 20; ++i) {
+		if (estPair(i)) {
+			std::cout << i << std::endl;
+		}
+    }
 }
 
 // -------------------------------------------------------------
 // Exercice 11 - Tableau / vector
 // -------------------------------------------------------------
 void ex11() {
+	std::vector<int> myVector = {12, 7, 25, 3, 18};
+	std::string listElements = "";
+	int somme = 0, max = 0;
 
+	for (int i = 0; i < myVector.size(); ++i) {
+		somme += myVector[i];
+		listElements += std::to_string(myVector[i]) + " ";
+		if (myVector[i] > max) {
+			max = myVector[i];
+		}
+	}
+
+	std::cout << "Elements : " << listElements << std::endl;
+	std::cout << "Somme : " << somme << std::endl;
+	std::cout << "Moyenne : " << somme/myVector.size() << std::endl;
+	std::cout << "Max : " << max << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 12 - Chaines de caracteres
 // -------------------------------------------------------------
-void ex12() {
+int countVowels(const std::string& str) {
+	int count = 0;
+	for (char c : str) {
+		char lowerC = std::tolower(c);
+		if (lowerC == 'a' || lowerC == 'e' || lowerC == 'i' || lowerC == 'o' || lowerC == 'u') {
+			count++;
+		}
+	}
+	return count;
+}
 
+void ex12() {
+	std::string userWord;
+	std::cout << "Mot : ";
+	std::cin >> userWord;
+	std::transform(userWord.begin(), userWord.end(), userWord.begin(), ::toupper);
+
+	std::cout << "Longueur : " << userWord.length() << std::endl;
+	std::cout << "Majuscules : " << userWord << std::endl;
+	std::cout << "Voyelles : " << countVowels(userWord) << std::endl;
 }
 
 // -------------------------------------------------------------
 // Exercice 13 - struct
 // -------------------------------------------------------------
+struct EtudiantMethode {
+	std::string nom;
+	int age;
+	double moyenne;
 
+	void afficher() const {
+		std::cout << nom << " | " << age << " ans | moyenne : " << moyenne << "\n";
+	}
+};
 
 void ex13() {
+	EtudiantMethode etudiant1 = { "Dimitri", 16, 13.4 };
+	EtudiantMethode etudiant2 = { "Alice", 20, 16.8 };
 
+	etudiant1.afficher();
+	etudiant2.afficher();
+	std::cout << "" << std::endl;
+	
+	if (etudiant1.moyenne > etudiant2.moyenne) {
+		std::cout << etudiant1.nom << " a la meilleure moyenne." << std::endl;
+	}
+	else if (etudiant1.moyenne < etudiant2.moyenne) {
+		std::cout << etudiant2.nom << " a la meilleure moyenne." << std::endl;
+	}
+	else {
+		std::cout << "Les deux etudiants ont la meme moyenne." << std::endl;
+	}
 }
 
 // -------------------------------------------------------------
 // Exercice 14 - Menu avec switch
 // -------------------------------------------------------------
 void ex14() {
-
+	int choice = 0;
+	while (choice != 3) {
+		std::cout << "Menu : " << std::endl;
+		std::cout << "1. Dire bonjour" << std::endl;
+		std::cout << "2. Afficher l'heure" << std::endl;
+		std::cout << "3. Quitter" << std::endl;
+		std::cout << "Choix : ";
+		std::cin >> choice;
+		std::cout << "" << std::endl;
+		switch (choice) {
+		case 1:
+			std::cout << "Bonjour !" << std::endl;
+			break;
+		case 2:
+			std::cout << "J'ai pas de montre moi ! (On a qu'a dire qu'il est 14:23:36) " << std::endl;
+			break;
+		case 3:
+			std::cout << "Au Revoir !" << std::endl;
+			break;
+		default:
+			std::cout << "Choix invalide." << std::endl;
+		}
+		std::cout << "" << std::endl;
+	}
 }
 
 // =============================================================
@@ -112,13 +292,13 @@ void ex14() {
 // =============================================================
 
 // B1 - Factorielle (version boucle + version recursive)
-int factorielle(int n) {
+/*int factorielle(int n) {
 
 }
 
 int factorielleRec(int n) {
 
-}
+}*/
 
 void bonus1() {
 
@@ -128,16 +308,6 @@ void bonus1() {
 void bonus2() {
 
 }
-
-struct EtudiantMethode {
-    std::string nom;
-    int age;
-    double moyenne;
-
-    void afficher() const {
-        std::cout << nom << " | " << age << " ans | moyenne : " << moyenne << "\n";
-    }
-};
 
 void bonus3() {
     EtudiantMethode e = { "Aria", 21, 14.5 };
