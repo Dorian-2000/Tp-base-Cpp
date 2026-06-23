@@ -431,3 +431,4 @@ FodyWeavers.xsd
 # JetBrain IDE
 /.idea
 /.idea/.gitignore
+*.exe
